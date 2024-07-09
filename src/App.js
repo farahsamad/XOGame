@@ -21,7 +21,7 @@ function App() {
   const [user, setUser] = useState([]);
   const [computer, setComputer] = useState([]);
   const [wincounter, setWincounter] = useState(0);
-  const [userwin, setUserwin] = useState(false);
+  const [userwin, setUserwin] = useState(true);
   const [losecounter, setLosecounter] = useState(0);
   const [one, setOne] = useState(true);
   const block0 = useRef(null);

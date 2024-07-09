@@ -57,6 +57,7 @@ export default function Nav({
         computer: false,
       });
     } else {
+      console.log("yessssss");
       clearTurn({
         user: false,
         computer: true,
