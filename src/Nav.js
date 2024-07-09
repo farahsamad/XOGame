@@ -97,69 +97,73 @@ export default function Nav({
         <div className="logo">XOGame</div>
       </div>
       <div className="second-container">
-        <input
-          type="text"
-          className="name-container"
-          ref={NameRef}
-          placeholder="User"
-        />
-        <div className="win-container players-container">
-          <div
-            className="one-player"
-            id="one-player"
-            ref={onePlayer}
-            onClick={() => setOne((prev) => !prev)}
-          >
-            1 player
-          </div>
-          <div
-            className="two-player"
-            id="two-player"
-            ref={twoPlayer}
-            onClick={() => setOne((prev) => !prev)}
-          >
-            2 player
-          </div>
-        </div>
-        <div className="win-container">
-          <div id="win-word">Win: </div> {wincounter}
-        </div>
-        <div className="win-container">
-          <div id="lose-word">Lose: </div> {losecounter}
-        </div>
-        <div
-          className="win-container"
-          style={{ cursor: "pointer", minWidth: "fit-content" }}
-          onClick={playAgain}
-        >
-          Play again
-        </div>
-        <div className="win-container setting-cont">
+        <div className="second-layer">
           <input
-            type="image"
-            src={require(`./Image/setting.png`)}
-            alt="setting"
-            className="setting"
-            onClick={() => {
-              setSetting((prev) => !prev);
-            }}
+            type="text"
+            className="name-container"
+            ref={NameRef}
+            placeholder="User"
           />
-          <div className={`setting-container ${setting ? "visible" : ""}`}>
+          <div className="win-container players-container">
             <div
-              className="Reset-button"
-              onClick={() => {
-                playAgain();
-                clearWincounter(() => 0);
-                clearLosecounter(() => 0);
-              }}
+              className="one-player"
+              id="one-player"
+              ref={onePlayer}
+              onClick={() => setOne((prev) => !prev)}
             >
-              Reset
+              1 player
             </div>
             <div
-              className="Change-name-button"
-              onClick={() => (NameRef.current ? NameRef.current.focus() : "")}
+              className="two-player"
+              id="two-player"
+              ref={twoPlayer}
+              onClick={() => setOne((prev) => !prev)}
             >
-              Change username
+              2 player
+            </div>
+          </div>
+        </div>
+        <div className="third-layer">
+          <div className="win-container">
+            <div id="win-word">Win: </div> {wincounter}
+          </div>
+          <div className="win-container">
+            <div id="lose-word">Lose: </div> {losecounter}
+          </div>
+          <div
+            className="win-container"
+            style={{ cursor: "pointer", minWidth: "fit-content" }}
+            onClick={playAgain}
+          >
+            Again
+          </div>
+          <div className="win-container setting-cont">
+            <input
+              type="image"
+              src={require(`./Image/setting.png`)}
+              alt="setting"
+              className="setting"
+              onClick={() => {
+                setSetting((prev) => !prev);
+              }}
+            />
+            <div className={`setting-container ${setting ? "visible" : ""}`}>
+              <div
+                className="Reset-button"
+                onClick={() => {
+                  playAgain();
+                  clearWincounter(() => 0);
+                  clearLosecounter(() => 0);
+                }}
+              >
+                Reset
+              </div>
+              <div
+                className="Change-name-button"
+                onClick={() => (NameRef.current ? NameRef.current.focus() : "")}
+              >
+                Change username
+              </div>
             </div>
           </div>
         </div>
