@@ -135,7 +135,7 @@ export default function Nav({
             style={{ cursor: "pointer", minWidth: "fit-content" }}
             onClick={playAgain}
           >
-            Again
+            Play again
           </div>
           <div className="win-container setting-cont">
             <input
