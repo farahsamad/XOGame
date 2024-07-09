@@ -1,10 +1,296 @@
+.App-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.App-second-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+}
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  justify-content: space-evenly;
+  width: 40vh;
+  height: 70vh;
+  background-color: black;
+}
+.blocks {
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.X-container {
+  font-size: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.nav-container {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  margin-bottom: 50px;
+  flex-direction: column;
+  margin-top: 10px;
+  /* justify-content: center; */
+  align-items: center;
+}
+.logo-container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.second-container {
+  width: 100%;
+  display: flex;
+  /* justify-content: flex-end; */
+}
+.name-container {
+  padding-left: 15px;
+  width: 15%;
+  margin-right: 1.6%;
+  display: flex;
+  justify-content: center;
+  font-size: 0.5rem;
+  align-items: center;
+  border: none;
+}
+.name-container::placeholder {
+  color: black;
+}
+.setting-cont {
+  position: relative;
+}
+.setting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: fit-content;
+  right: 9px;
+  font-size: 0.7rem;
+  margin-top: 90px;
+  /* background-color: rgb(0, 0, 0, 0.9); */
+  box-shadow: 1px 1px 5px 5px rgb(0 0 0 / 30%);
+  border-radius: 5%;
+  transform: translateX(900px);
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+.visible {
+  display: flex !important;
+  transform: translateX(0px) !important;
+}
+.win-container {
+  width: 16.6%;
+  display: flex;
+  justify-content: center;
+  font-size: 0.5rem;
+  align-items: center;
+}
+.setting {
+  height: 1rem;
+  width: 1rem;
+}
+
+.Reset-button,
+.Change-name-button {
+  padding-right: 10%;
+  padding-left: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Change-name-button:hover,
+.Reset-button:hover {
+  background-color: beige;
+  cursor: pointer;
+}
+
+/* .Reset-button {
+  padding-top: 10%;
+  border-bottom: 1px solid #d6d6d6;
+}
+.Change-name-button {
+  padding-bottom: 10%;
+  white-space: nowrap !important;
+} */
+.Reset-button {
+  border-bottom: 1px solid #d6d6d6;
+  padding-bottom: 5% !important;
+  padding-top: 5% !important;
+}
+.Change-name-button {
+  padding-bottom: 5% !important;
+  padding-top: 5% !important;
+  white-space: nowrap !important;
+}
+.players-container {
+  width: 25%;
+  border: 1px solid black;
+  min-width: fit-content;
+}
+.one-player {
+  border-right: 1px solid black;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background-color: red;
+  cursor: pointer;
+  transition: background-color 0.3s cubic-bezier(0.1, 0.7, 1, 0.1) 0s;
+  min-width: fit-content;
+}
+.two-player {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  padding-left: 1%;
+  transition: background-color 0.3s cubic-bezier(0.1, 0.7, 1, 0.1) 0s;
+  min-width: fit-content;
+}
+#lose-word,
+#win-word {
+  margin-right: 3%;
+}
+
+@media (min-width: 900px) {
+  .App {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 500px !important;
+    height: 500px !important;
+    background-color: black;
+  }
+  .X-container {
+    font-size: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 500px) {
+  .second-container {
+    width: 70%;
+    display: flex;
+    /* justify-content: flex-end; */
+  }
+  .setting {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .nav-container {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    flex-direction: row !important;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .setting-container {
+    width: 95% !important;
+    right: 5% !important;
+    font-size: 1rem !important;
+    margin-top: 110px !important;
+    /* background-color: rgb(0, 0, 0, 0.9); */
+    border-radius: 5%;
+  }
+  .Reset-button,
+  .Change-name-button {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    width: 100%;
+    text-align: center;
+  }
+  .Reset-button {
+    padding-top: 5%;
+  }
+  .Change-name-button {
+    padding-bottom: 5%;
+    white-space: nowrap !important;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .name-container,
+  .win-container {
+    padding-left: 0px !important;
+    width: 16.6%;
+    margin-right: 0%;
+    font-size: 0.75rem !important;
+  }
+  .players-container {
+    border: 1px solid black;
+    width: 30% !important;
+  }
+}
+@media (min-width: 701px) {
+  .name-container {
+    padding-left: 0px !important;
+    width: 16.6%;
+    margin-right: 0%;
+    font-size: 1rem !important;
+  }
+  .win-container {
+    font-size: 1rem !important;
+  }
+  .players-container {
+    border: 1px solid black;
+    width: 25% !important;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .App {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 65vw !important;
+    height: 65vw !important;
+    background-color: black;
+  }
+  .X-container {
+    font-size: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
